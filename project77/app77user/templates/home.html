@@ -6,6 +6,8 @@
 {% block content %}
 {% if user.is_authenticated %}
     Hi {{ user.username }}!
+    Balance {{ ForexDenModel.Balance }}
+    
     <h1>This is the home page</h1>
     <p><a href="{% url 'logout' %}">logout</a></p>
     

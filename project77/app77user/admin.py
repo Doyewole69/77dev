@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
 from .forms import CustomUserChangeForm, CustomUserCreationForm
-from .models import CustomUser
+from .models import CustomUser, ForexDenModel
 
 # Register your models here.
 class CustomUserAdmin(UserAdmin):
@@ -11,3 +11,4 @@ class CustomUserAdmin(UserAdmin):
     form = CustomUserChangeForm
 
 admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(ForexDenModel)

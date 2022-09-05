@@ -1,7 +1,8 @@
+from dataclasses import field
 from pyexpat import model
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import CustomUser
+from .models import CustomUser, ForexDenModel
 
 class CustomUserCreationForm(UserCreationForm):
 
@@ -17,3 +18,13 @@ class CustomUserChangeForm(UserChangeForm):
     class Meta:
         model = CustomUser
         fields = UserChangeForm.Meta.fields
+
+class ForexDenForm(forms.ModelForm):
+
+    class Meta:
+
+        model = ForexDenModel
+
+        fields = [
+            "Balance","Earning","Last_Deposit","Pending_Withdrawal","Referals","Earned_Commission",
+        ]
